@@ -1,10 +1,10 @@
-package nl.lunatech.assignment.core;
+package nl.lunatech.assignment.extension.core;
 
 import java.util.List;
 import java.util.Map;
 
-import nl.lunatech.assignment.elements.Airport;
-import nl.lunatech.assignment.gui.AirportSearcherGUI;
+import nl.lunatech.assignment.extension.elements.Airport;
+import nl.lunatech.assignment.extension.gui.AirportSearcherGUI;
 
 public class AirportsManager {
 	private Parser parser;

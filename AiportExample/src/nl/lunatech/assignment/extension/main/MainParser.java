@@ -1,6 +1,6 @@
-package nl.lunatech.assignment.main;
+package nl.lunatech.assignment.extension.main;
 
-import nl.lunatech.assignment.core.AirportsManager;
+import nl.lunatech.assignment.extension.core.AirportsManager;
 
 public class MainParser {
 

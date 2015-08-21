@@ -1,11 +1,11 @@
-package nl.lunatech.assignment.gui;
+package nl.lunatech.assignment.extension.gui;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-import nl.lunatech.assignment.core.AirportsManager;
-import nl.lunatech.assignment.elements.Airport;
-import nl.lunatech.assignment.elements.Runway;
+import nl.lunatech.assignment.extension.core.AirportsManager;
+import nl.lunatech.assignment.extension.elements.Airport;
+import nl.lunatech.assignment.extension.elements.Runway;
 
 import java.awt.*;
 import java.awt.event.*;

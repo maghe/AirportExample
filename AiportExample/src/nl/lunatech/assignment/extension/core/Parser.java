@@ -1,4 +1,4 @@
-package nl.lunatech.assignment.core;
+package nl.lunatech.assignment.extension.core;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import nl.lunatech.assignment.elements.Airport;
-import nl.lunatech.assignment.elements.Runway;
+import nl.lunatech.assignment.extension.elements.Airport;
+import nl.lunatech.assignment.extension.elements.Runway;
 
 public class Parser {
 

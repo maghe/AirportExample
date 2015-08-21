@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import nl.lunatech.assignment.extension.elements.Airport;
+import nl.lunatech.assignment.extension.elements.Country;
 import nl.lunatech.assignment.extension.elements.Runway;
 
 public class Parser {
@@ -23,7 +24,7 @@ public class Parser {
 
 	private Map<String, Set<Runway>> runways;
 	private Map<String, List<Airport>> airports;
-	private Map<String, String> countries;
+	private Map<String, Country> countries;
 
 	private Comparator treeComparator = new Comparator<Runway>() {
 
@@ -42,7 +43,7 @@ public class Parser {
 	public Parser() {
 		runways = new HashMap<String, Set<Runway>>();
 		airports = new HashMap<String, List<Airport>>();
-		countries = new HashMap<String, String>();
+		countries = new HashMap<String, Country>();
 
 	}
 
@@ -69,10 +70,23 @@ public class Parser {
 			while ((line = br.readLine()) != null) {
 
 				line = inputRefinement(line);
-				String[] contriesArray = line.split(cvsSplitBy);
 
-				if (!countries.containsKey(contriesArray[2])) {
-					countries.put(contriesArray[2], contriesArray[1]);
+				String[] contryArray = line.split(cvsSplitBy);
+
+				String code = contryArray[2];
+
+				Country country;
+				if (contryArray.length > 5) {
+					// the line contains also keywords
+					country = new Country(contryArray[0], contryArray[1], contryArray[2], contryArray[3],
+							contryArray[4], contryArray[5]);
+				} else {
+					country = new Country(contryArray[0], contryArray[1], contryArray[2], contryArray[3],
+							contryArray[4]);
+				}
+
+				if (!countries.containsKey(code)) {
+					countries.put(code, country);
 				}
 			}
 
@@ -204,12 +218,12 @@ public class Parser {
 		this.airports = airportsMap;
 	}
 
-	public Map<String, String> getCountriesMap() {
+	public Map<String, Country> getCountries() {
 		return countries;
 	}
 
-	public void setCountriesMap(Map<String, String> countriesMap) {
-		this.countries = countriesMap;
+	public void setCountries(Map<String, Country> countries) {
+		this.countries = countries;
 	}
 
 }

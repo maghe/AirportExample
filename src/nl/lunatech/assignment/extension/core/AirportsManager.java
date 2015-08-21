@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import nl.lunatech.assignment.extension.elements.Airport;
+import nl.lunatech.assignment.extension.elements.Country;
 import nl.lunatech.assignment.extension.gui.AirportSearcherGUI;
 
 public class AirportsManager {
@@ -14,6 +15,15 @@ public class AirportsManager {
 
 		parser = new Parser();
 		parser.parse();
+		
+		//MAGHE - to remove
+		Map<String, Country> countries = parser.getCountries();
+		for (Map.Entry<String, Country> entry : countries.entrySet())
+		{
+		    System.out.println(entry.getKey() + "/" + entry.getValue().toString());
+		}
+		
+		
 
 		airportSearcherGUI = new AirportSearcherGUI(this);
 
@@ -35,9 +45,9 @@ public class AirportsManager {
 
 		String countryNameLowerCase = countryName.toLowerCase();
 
-		if (parser.getCountriesMap().containsKey(countryNameLowerCase)) {
+		if (parser.getCountries().containsKey(countryNameLowerCase)) {
 
-			return getAirportsDataFromCountryCode(parser.getCountriesMap().get(countryNameLowerCase));
+			//return getAirportsDataFromCountryCode(parser.getCountries().get(countryNameLowerCase));
 		}
 		return null;
 	}
